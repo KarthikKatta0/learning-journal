@@ -1,0 +1,132 @@
+2026-07-04 23:10:00,980 | INFO | Batch conversion started
+2026-07-04 23:10:00,980 | INFO | Input directory: D:\github\learning-journal\resources\python-notebooks\Complete-Python-3-Bootcamp
+2026-07-04 23:10:00,980 | INFO | Output directory: D:\github\learning-journal\projects\converted_output
+2026-07-04 23:10:00,980 | INFO | Target format: PDF
+2026-07-04 23:10:02,573 | INFO | Starting conversion: Jupyter (iPython) Notebooks Guide.ipynb -> PDF
+2026-07-04 23:10:04,748 | ERROR | nbconvert failed for Jupyter (iPython) Notebooks Guide.ipynb
+2026-07-04 23:10:04,748 | ERROR | [NbConvertApp] Converting notebook D:\github\learning-journal\resources\python-notebooks\Complete-Python-3-Bootcamp\Jupyter (iPython) Notebooks Guide.ipynb to webpdf
+Traceback (most recent call last):
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\webpdf.py", line 69, in _check_launch_reqs
+    from pyppeteer import launch
+ModuleNotFoundError: No module named 'pyppeteer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\Scripts\jupyter-nbconvert-script.py", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "D:\Anaconda\Lib\site-packages\jupyter_core\application.py", line 277, in launch_instance
+    return super().launch_instance(argv=argv, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\traitlets\config\application.py", line 992, in launch_instance
+    app.start()
+  File "D:\Anaconda\Lib\site-packages\nbconvert\nbconvertapp.py", line 423, in start
+    self.convert_notebooks()
+  File "D:\Anaconda\Lib\site-packages\nbconvert\nbconvertapp.py", line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "D:\Anaconda\Lib\site-packages\nbconvert\nbconvertapp.py", line 560, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\nbconvert\nbconvertapp.py", line 488, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\exporter.py", line 189, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\exporter.py", line 206, in from_file
+    return self.from_notebook_node(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\webpdf.py", line 148, in from_notebook_node
+    self._check_launch_reqs()
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\webpdf.py", line 72, in _check_launch_reqs
+    raise RuntimeError(
+RuntimeError: Pyppeteer is not installed to support Web PDF conversion. Please install `nbconvert[webpdf]` to enable.
+2026-07-04 23:10:04,750 | INFO | Batch conversion finished
+2026-07-04 23:10:04,750 | INFO | Successful conversions: 0
+2026-07-04 23:10:04,750 | INFO | Failed conversions: 1
+2026-07-04 23:12:09,916 | INFO | Batch conversion started
+2026-07-04 23:12:09,916 | INFO | Input directory: D:\github\learning-journal\resources\python-notebooks\Complete-Python-3-Bootcamp
+2026-07-04 23:12:09,916 | INFO | Output directory: D:\github\learning-journal\projects\converted_output
+2026-07-04 23:12:09,916 | INFO | Target format: PDF
+2026-07-04 23:12:10,579 | INFO | Starting conversion: Jupyter (iPython) Notebooks Guide.ipynb -> PDF
+2026-07-04 23:12:12,467 | ERROR | nbconvert failed for Jupyter (iPython) Notebooks Guide.ipynb
+2026-07-04 23:12:12,467 | ERROR | [NbConvertApp] Converting notebook D:\github\learning-journal\resources\python-notebooks\Complete-Python-3-Bootcamp\Jupyter (iPython) Notebooks Guide.ipynb to webpdf
+Traceback (most recent call last):
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\webpdf.py", line 69, in _check_launch_reqs
+    from pyppeteer import launch
+ModuleNotFoundError: No module named 'pyppeteer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\Scripts\jupyter-nbconvert-script.py", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "D:\Anaconda\Lib\site-packages\jupyter_core\application.py", line 277, in launch_instance
+    return super().launch_instance(argv=argv, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\traitlets\config\application.py", line 992, in launch_instance
+    app.start()
+  File "D:\Anaconda\Lib\site-packages\nbconvert\nbconvertapp.py", line 423, in start
+    self.convert_notebooks()
+  File "D:\Anaconda\Lib\site-packages\nbconvert\nbconvertapp.py", line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "D:\Anaconda\Lib\site-packages\nbconvert\nbconvertapp.py", line 560, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\nbconvert\nbconvertapp.py", line 488, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\exporter.py", line 189, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\exporter.py", line 206, in from_file
+    return self.from_notebook_node(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\webpdf.py", line 148, in from_notebook_node
+    self._check_launch_reqs()
+  File "D:\Anaconda\Lib\site-packages\nbconvert\exporters\webpdf.py", line 72, in _check_launch_reqs
+    raise RuntimeError(
+RuntimeError: Pyppeteer is not installed to support Web PDF conversion. Please install `nbconvert[webpdf]` to enable.
+2026-07-04 23:12:12,467 | INFO | Batch conversion finished
+2026-07-04 23:12:12,467 | INFO | Successful conversions: 0
+2026-07-04 23:12:12,468 | INFO | Failed conversions: 1
+2026-07-04 23:23:19,074 | INFO | Batch conversion started
+2026-07-04 23:23:19,074 | INFO | Input directory: D:\github\learning-journal\resources\python-notebooks\Complete-Python-3-Bootcamp
+2026-07-04 23:23:19,074 | INFO | Output directory: D:\github\learning-journal\projects\converted_output
+2026-07-04 23:23:19,074 | INFO | Target format: WORD
+2026-07-04 23:23:19,784 | INFO | Starting conversion: Jupyter (iPython) Notebooks Guide.ipynb -> WORD
+2026-07-04 23:23:22,704 | INFO | Converted successfully: Jupyter (iPython) Notebooks Guide.ipynb
+2026-07-04 23:23:22,704 | INFO | Batch conversion finished
+2026-07-04 23:23:22,704 | INFO | Successful conversions: 1
+2026-07-04 23:23:22,705 | INFO | Failed conversions: 0
+2026-07-04 23:25:15,450 | INFO | Batch conversion started
+2026-07-04 23:25:15,450 | INFO | Input directory: D:\github\learning-journal\resources\python-notebooks\Complete-Python-3-Bootcamp\00-Python Object and Data Structure Basics
+2026-07-04 23:25:15,450 | INFO | Output directory: D:\github\learning-journal\projects\converted_output
+2026-07-04 23:25:15,450 | INFO | Target format: WORD
+2026-07-04 23:25:15,895 | INFO | Starting conversion: 01-Numbers.ipynb -> WORD
+2026-07-04 23:25:17,888 | INFO | Converted successfully: 01-Numbers.ipynb
+2026-07-04 23:25:17,888 | INFO | Starting conversion: 01-Variable Assignment.ipynb -> WORD
+2026-07-04 23:25:19,875 | INFO | Converted successfully: 01-Variable Assignment.ipynb
+2026-07-04 23:25:19,875 | INFO | Starting conversion: 02-Strings.ipynb -> WORD
+2026-07-04 23:25:21,931 | INFO | Converted successfully: 02-Strings.ipynb
+2026-07-04 23:25:21,931 | INFO | Starting conversion: 03-Print Formatting with Strings.ipynb -> WORD
+2026-07-04 23:25:23,987 | INFO | Converted successfully: 03-Print Formatting with Strings.ipynb
+2026-07-04 23:25:23,987 | INFO | Starting conversion: 04-Lists.ipynb -> WORD
+2026-07-04 23:25:25,981 | INFO | Converted successfully: 04-Lists.ipynb
+2026-07-04 23:25:25,981 | INFO | Starting conversion: 05-Dictionaries.ipynb -> WORD
+2026-07-04 23:25:27,935 | INFO | Converted successfully: 05-Dictionaries.ipynb
+2026-07-04 23:25:27,935 | INFO | Starting conversion: 06-Tuples.ipynb -> WORD
+2026-07-04 23:25:29,887 | INFO | Converted successfully: 06-Tuples.ipynb
+2026-07-04 23:25:29,887 | INFO | Starting conversion: 07-Sets and Booleans.ipynb -> WORD
+2026-07-04 23:25:31,839 | INFO | Converted successfully: 07-Sets and Booleans.ipynb
+2026-07-04 23:25:31,839 | INFO | Starting conversion: 08-Files.ipynb -> WORD
+2026-07-04 23:25:33,817 | INFO | Converted successfully: 08-Files.ipynb
+2026-07-04 23:25:33,817 | INFO | Starting conversion: 09-Objects and Data Structures Assessment Test.ipynb -> WORD
+2026-07-04 23:25:35,769 | INFO | Converted successfully: 09-Objects and Data Structures Assessment Test.ipynb
+2026-07-04 23:25:35,769 | INFO | Starting conversion: 10-Objects and Data Structures Assessment Test-Solution.ipynb -> WORD
+2026-07-04 23:25:37,814 | INFO | Converted successfully: 10-Objects and Data Structures Assessment Test-Solution.ipynb
+2026-07-04 23:25:37,816 | INFO | Batch conversion finished
+2026-07-04 23:25:37,816 | INFO | Successful conversions: 11
+2026-07-04 23:25:37,816 | INFO | Failed conversions: 0

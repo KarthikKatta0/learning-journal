@@ -5,3 +5,4 @@
 - `functions.md`
 - `oop.md`
 - `mini-projects.md`
+- `notes.md`
