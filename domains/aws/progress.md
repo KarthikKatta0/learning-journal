@@ -1,0 +1,1 @@
+- Completed setup of AWS account.
