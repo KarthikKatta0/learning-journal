@@ -86,3 +86,20 @@ sorted(d.values())
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 We can use x+ = 1 for x = x+1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+for help for any method that we call, we can use builtin function for it.
+for ex: help(mylist.insert) --this will return help regarding that method.
+--------------------------------------------------------------------------------------------------------------------------------------------------         
+there's a secrets module in python for cryptographic functions like random number generation etc
+--------------------------------------------------------------------------------------------------------------------------------------------------
+To check version of python in code:
+from platform import python_version
+print(python_version())
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+In python function naming convention, we follow snake-casing, where the name of the function is all small letters and the words of sepearted by _
+for ex: def name_of_the_function():
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+docstring (multiple line comment) is  called as ''' nsbcbvhsvhvxdvhusv '''
