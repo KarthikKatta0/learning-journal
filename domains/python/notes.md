@@ -103,3 +103,107 @@ for ex: def name_of_the_function():
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 docstring (multiple line comment) is  called as ''' nsbcbvhsvhvxdvhusv '''
+
+--------------------------------------------------------------------------------
+in print statement, we can use sep and end keywords
+sep controls what goes between items. end controls what goes after the line (the default is a new line):
+print('a', 'b', 'c')            # Default: space
+print('a', 'b', 'c', sep='-')   # a-b-c
+print('2025', '01', '15', sep='/')  # a date
+
+print('Hello', end=' ')
+print('World')  # stays on the same line
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Multiple Assignment and Swapping
+Python lets you assign several variables in one line, and swap two values without a temporary variable:
+a, b, c = 1, 2, 3
+print(a, b, c)
+
+# Swap a and b
+a, b = b, a
+print('After swap:', a, b)
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Rounding and Formatting
+price = 19.876
+print(round(price, 2))   # 19.88
+
+# f-strings can format decimals directly
+print(f'${price:.2f}')   # $19.88
+
+The :.2f format shows exactly two decimal places, which is exactly what money needs. You will use it in the tip calculator next.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Creating Strings
+Use single or double quotes. Triple quotes hold multi-line text:
+code:
+name = 'Alice'
+message = "Hello, World!"
+poem = '''Roses are red,
+Violets are blue'''
+
+print(name)
+print(message)
+print(poem)
+
+Output: 
+Alice
+Hello, World!
+Roses are red,
+Violets are blue
+-----------------------------------------------------------------------------------------------------------------------------------------------
+f-strings can format numbers too. This is how you show clean decimals, percentages, and thousands separators:
+code:
+pi = 3.14159
+big = 1234567
+ratio = 0.856
+
+print(f'{pi:.2f}')    # 3.14  (2 decimals)
+print(f'{big:,}')     # 1,234,567  (thousands)
+print(f'{ratio:.1%}') # 85.6%  (percentage)
+
+op:
+3.14
+1,234,567
+85.6%
+-----------------------------------------------------------------------------------------------------------------------------------------------
+# Python f-String Number Formatting Cheat Sheet
+
+Based on examples from FreeAcademy's **Strings and f-Strings** lesson.[1]
+
+## Basic float and precision
+
+```python
+pi = 3.14159
+```
+
+- `f"{pi}"` -> `3.14159` — default float representation.[1]
+- `f"{pi:.2f}"` -> `3.14` — 2 decimal places, fixed-point.[1]
+- `f"{pi:.3f}"` -> `3.142` — 3 decimal places, fixed-point.
+- `f"{pi:.2e}"` -> `3.14e+00` — scientific notation.
+- `f"{pi:.3g}"` -> `3.14` — 3 significant digits; Python chooses fixed-point or scientific notation automatically.
+
+## Thousands separators
+
+```python
+big = 1234567
+```
+
+- `f"{big:,}"` -> `1,234,567` — comma as thousands separator.[1]
+- `f"{big:_.0f}"` -> `1_234_567` — underscore separator, 0 decimal places.
+
+## Percentages
+
+```python
+ratio = 0.856
+```
+
+- `f"{ratio:.1%}"` -> `85.6%` — 1 decimal place, percentage.[1]
+- `f"{ratio:.2%}"` -> `85.60%` — 2 decimal places, percentage.
+
+## Pattern to remember
+
+```python
+f"{value:[alignment][width][,][.precision][type]}"
+```
+
+The last character is usually the **type**, such as `f`, `e`, `g`, or `%`. For strings, there may be no type at all.[1]
