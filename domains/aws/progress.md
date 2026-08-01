@@ -1,1 +1,2 @@
 - Completed setup of AWS account.
+- Completed IAM basics, policies,

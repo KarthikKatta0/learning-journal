@@ -207,3 +207,11 @@ f"{value:[alignment][width][,][.precision][type]}"
 ```
 
 The last character is usually the **type**, such as `f`, `e`, `g`, or `%`. For strings, there may be no type at all.[1]
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Strings Are Immutable
+You cannot change a character in place, but you can build a new string:
+code:
+text = 'Hello'
+# text[0] = 'J'  would be an error
+text = 'J' + text[1:]
+print(text)  # Jello
