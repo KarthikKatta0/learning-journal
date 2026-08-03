@@ -215,3 +215,192 @@ text = 'Hello'
 # text[0] = 'J'  would be an error
 text = 'J' + text[1:]
 print(text)  # Jello
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Search and Replace
+code:
+text = 'The cat sat'
+print(text.replace('cat', 'dog'))   # The dog sat
+print(text.count('a'))              # 2
+print(text.startswith('The'))       # True
+print('cat' in text)                # True
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Split and Join
+split() breaks a string into a list; join() glues a list back into a string. This pair is everywhere in real code:
+code:
+sentence = 'apple,banana,cherry'
+fruits = sentence.split(',')
+print(fruits)
+
+back = ' - '.join(fruits)
+print(back)
+
+o/p:
+['apple', 'banana', 'cherry']
+apple - banana - cherry
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Notes on split() and join()
+split(sep) breaks a string into a list of substrings using sep as the separator, e.g. 'apple,banana,cherry'.split(',') → ['apple', 'banana', 'cherry'].
+
+If you call split() with no argument, it splits on any whitespace, e.g. 'apple banana cherry'.split() → ['apple', 'banana', 'cherry'].
+
+sep.join(list_of_strings) takes a list of strings and joins them into one string, putting sep between each element, e.g. ' '.join(['apple', 'banana', 'cherry']) → 'apple banana cherry'.
+
+To join with no separator, use an empty string: ''.join(chars) → joins characters directly like 'a' 'p' 'p' 'l' 'e' → 'apple'.
+
+To split into individual characters, use list(text) or [ch for ch in text], then rejoin with ''.join(...) or another separator like '-'.join(...).
+-----------------------------------------------------------------------------------------------------------------------------------------------Checchecking Contents
+These return True or False, which is handy for validation:
+code:
+print('12345'.isdigit())   # True
+print('abc'.isalpha())     # True
+print('Secret1'.isalnum()) # True (letters and digits)
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Chaining Methods
+Because each method returns a new string, you can chain them. This one line cleans and standardizes a name:
+code:
+raw = '   John SMITH  '
+clean = raw.strip().title()
+print(f'|{clean}|')  # |John Smith|
+
+o/p:
+|John Smith|
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1. Simple item loop (strings or lists)
+Use when you only need each element itself.
+
+python
+text = "Karthik"
+for ch in text:          # ch is each character
+    print(ch)
+
+nums = [10, 20, 30]
+for n in nums:           # n is each number
+    print(n)
+2. Index loop (need positions or neighbors)
+Use when you need i, i+1, or to assign back into the list.
+
+python
+nums = [3, 1, 3, 3]
+for i in range(len(nums) - 1):   # i is 0..len-2
+    if nums[i] == 3 and nums[i+1] == 3:
+        print("Found 3 next to 3")
+For modifying:
+
+python
+s = "KaRtHiK"
+chars = list(s)
+for i in range(len(chars)):
+    if chars[i].isupper():
+        chars[i] = chars[i].lower()
+    else:
+        chars[i] = chars[i].upper()
+result = ''.join(chars)
+3. enumerate (item + index together)
+Use when you want both the value and its position, but in a clean way.
+
+python
+names = ["ram", "shyam", "karthik"]
+for i, name in enumerate(names):   # i=index, name=item
+    print(i, name)
+Typical use: updating by index but writing clearer code.
+
+python
+chars = list("abc")
+for i, ch in enumerate(chars):
+    if ch == "b":
+        chars[i] = "B"
+result = ''.join(chars)
+4. zip (pairing two iterables)
+Use when you want to loop over two lists (or a list and a slice) in parallel.
+
+python
+nums = [3, 1, 3, 3]
+for a, b in zip(nums, nums[1:]):   # pairs (nums[i], nums[i+1])
+    if a == 3 and b == 3:
+        print("Found 3 next to 3")
+Another example:
+
+python
+first = ["ram", "shyam"]
+last  = ["kumar", "verma"]
+for f, l in zip(first, last):
+    print(f, l)   # ram kumar, shyam verma
+5. List comprehension (compact item loop)
+Use when you’re transforming every element into a new list or string.
+
+python
+text = "KaRtHiK"
+swapped_chars = [
+    ch.lower() if ch.isupper() else ch.upper()
+    for ch in text
+]
+result = ''.join(swapped_chars)
+For numbers:
+
+python
+nums = [1, 2, 3, 4]
+squares = [n*n for n in nums]   # [1, 4, 9, 16]
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1. in — membership test
+Use when you want to know if a value is present in a list, tuple, string, etc.
+
+python
+nums = [3, 5, 11]
+11 in nums        # True
+7 in nums         # False
+
+text = "karthik"
+"a" in text       # True
+"z" in text       # False
+Typical use in your blackjack problem:
+
+python
+if 11 in (a, b, c):
+    ...
+2. any() — “at least one True?”
+Use when you have a bunch of boolean conditions and you want to know if any of them is True.
+
+Syntax: any(iterable_of_booleans)
+
+python
+nums = [0, 0, 5]
+any(nums)              # True (because 5 is truthy)
+any([False, False])    # False
+any([False, True])     # True
+With conditions:
+
+python
+nums = [3, 10, 20]
+conditions = [n > 10 for n in nums]   # [False, False, True]
+any(conditions)                       # True (there is at least one > 10)
+Pattern to remember:
+
+python
+any(cond(x) for x in items)
+Example:
+
+python
+nums = [3, 11, 9]
+has_eleven = any(n == 11 for n in nums)   # True
+3. all() — “are all True?”
+Use when you have a bunch of booleans and want to know if every single one is True.
+
+python
+nums = [2, 4, 6]
+conditions = [n % 2 == 0 for n in nums]   # [True, True, True]
+all(conditions)                           # True
+
+nums2 = [2, 3, 4]
+all(n % 2 == 0 for n in nums2)            # False (3 is odd)
+4. Quick rules to avoid confusion
+“Is this value present among these?” → use in
+11 in (a, b, c)
+
+“At least one of these conditions is true?” → use any()
+any(n == 11 for n in [a, b, c])
+
+“All of these conditions are true?” → use all()
+all(n < 21 for n in [a, b, c])
+
+Don’t compare any() or all() to numbers (like any(...) == 11), because they return True/False, not one of your items.
+-----------------------------------------------------------------------------------------------------------------------------------------------
