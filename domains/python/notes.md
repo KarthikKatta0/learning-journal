@@ -404,3 +404,124 @@ all(n < 21 for n in [a, b, c])
 
 Don’t compare any() or all() to numbers (like any(...) == 11), because they return True/False, not one of your items.
 -----------------------------------------------------------------------------------------------------------------------------------------------
+string.ascii_lowercase
+Comes from the string module.
+
+Value is the string:
+string.ascii_lowercase == "abcdefghijklmnopqrstuvwxyz"
+
+It’s a constant: fixed, not a function, no arguments.
+
+Why we do alphabet_set = set(alphabet)
+alphabet is "abcdefghijklmnopqrstuvwxyz" (a string).
+
+set(alphabet) turns that string into a set of unique letters:
+{'a', 'b', 'c', ..., 'z'}.
+
+Sets let you do “set math” like:
+
+check if one set contains another (issubset, >=)
+
+find missing letters (alphabet_set - sentence_letters)
+
+How this helps with pangrams
+Build alphabet: alphabet_set = set(string.ascii_lowercase)
+
+Build letters from sentence: letters_in_sentence = set(sentence.lower())
+
+Pangram check = “is every a–z in the sentence?”
+
+That’s exactly: alphabet_set.issubset(letters_in_sentence) or
+letters_in_sentence >= alphabet_set --refer pangram program for more clarity
+-----------------------------------------------------------------------------------------------------------------------------------------------
+*args and **kwargs — Short Notes
+*args allows a function to accept any number of positional arguments.
+
+Inside the function, args is stored as a tuple.
+
+**kwargs allows a function to accept any number of keyword arguments.
+
+Inside the function, kwargs is stored as a dictionary.
+
+python
+def add(*args):
+    return sum(args)
+
+print(add(10, 20, 30))   # 60
+python
+def student_info(**kwargs):
+    for key, value in kwargs.items():
+        print(key, ":", value)
+
+student_info(name="Ravi", age=22, city="Hyderabad")
+Both Together
+python
+def details(name, *args, **kwargs):
+    print(name)
+    print(args)      # tuple
+    print(kwargs)    # dictionary
+
+details("Ravi", 22, "Python", city="Hyderabad", role="Developer")
+Parameter order: normal parameters → *args → **kwargs.
+
+args and kwargs are just naming conventions; the * and ** symbols are what matter.
+
+In a function call, * unpacks a list/tuple and ** unpacks a dictionary.
+
+python
+numbers = [1, 2, 3]
+print(add(*numbers))  # 6
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+map(), filter() and lambda — Short Notes
+lambda
+A lambda is a small anonymous function (a function without a formal def name).
+
+It can take multiple inputs but contains only one expression.
+
+It returns the expression result automatically; no return keyword is used.
+
+python
+square = lambda x: x ** 2
+print(square(5))   # 25
+Syntax:
+
+python
+lambda arguments: expression
+map()
+map() applies a function to every item in an iterable such as a list.
+
+It returns a map object, so use list() to see or store the result.
+
+python
+nums = [1, 2, 3, 4]
+
+squares = list(map(lambda x: x ** 2, nums))
+print(squares)     # [1, 4, 9, 16]
+Syntax:
+
+python
+map(function, iterable)
+filter()
+filter() keeps only items that meet a condition.
+
+The function must return True or False.
+
+It returns a filter object, usually converted using list().
+
+python
+nums = [1, 2, 3, 4, 5, 6]
+
+even_nums = list(filter(lambda x: x % 2 == 0, nums))
+print(even_nums)  # [2, 4, 6]
+Syntax:
+
+python
+filter(function, iterable)
+Quick Difference
+map() → transforms every item
+
+filter() → selects matching items
+
+lambda → creates a short function, often used with map() and filter()
+-----------------------------------------------------------------------------------------------------------------------------------------------
